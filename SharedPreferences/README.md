@@ -16,7 +16,7 @@ Method | Usage |
   
   - 调用SharedPreferences.Editor对象的**apply( )** 方法完成提交
   
-  - 调用SharedPreferences的实例方法clear()可以清空Editor
+  - 调用SharedPreferences的实例方法**clear()** 可以清空Editor
   
 - **读取数据**
 
