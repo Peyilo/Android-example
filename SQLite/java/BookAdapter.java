@@ -7,15 +7,19 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
+import androidx.annotation.LayoutRes;
+import androidx.annotation.NonNull;
+
 import java.util.List;
 
 public class BookAdapter extends ArrayAdapter<Book> {
 
-    int mResourceId;
+    int mResource;
 
-    public BookAdapter(Context context, int textViewResourceId, List<Book> books){
-        super(context,textViewResourceId,books);
-        mResourceId = textViewResourceId;
+    //@LayoutRes注解表示该变量必须是一个layout文件的资源ID
+    public BookAdapter(@NonNull Context context, @LayoutRes int resource, @NonNull List<Book> books){
+        super(context,resource,books);
+        mResource = resource;
     }
 
     @Override
@@ -26,7 +30,7 @@ public class BookAdapter extends ArrayAdapter<Book> {
 
         //提高ListView性能1
         if(convertView == null){
-            view = LayoutInflater.from(getContext()).inflate(mResourceId, parent, false);
+            view = LayoutInflater.from(getContext()).inflate(mResource, parent, false);
             holder = new MyHolder();
             holder.author = (TextView) view.findViewById(R.id.author);
             holder.name = (TextView) view.findViewById(R.id.name);
