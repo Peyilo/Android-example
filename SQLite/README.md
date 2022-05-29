@@ -105,3 +105,7 @@
 
     listView.setAdapter(adapter);
 	```
+- **刷新ListView**
+	```java
+	public void notifyDataSetChanged()
+	```
