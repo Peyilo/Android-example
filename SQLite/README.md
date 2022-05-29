@@ -85,9 +85,9 @@
 	@Override
 	public View getView(int position, View CovertView, ViewGroup parent){
 		
-		Book book = getItem(position);
+		Book book = getItem(position);		//ArrayAdapter类提供的public @Nullable T getItem(int position)方法
 
-		View view = LayoutInflater.from(getContext()).inflate(mResource, parent, false);
+		View view = LayoutInflater.from(getContext()).inflate(mResource, parent, false);	//这里调用的getContext()方法是ArrayAdapter提供,在调用父类ArrayAdapter的构造方法时，传入了Context
 
 		TextView author = (TextView) view.findViewByfId(R.id.author);
 
@@ -95,6 +95,13 @@
 
 		return view;
 		}
+	```
+	**父类中的getItem()**
+	```java
+	@Override
+    public @Nullable T getItem(int position) {
+        return mObjects.get(position);		//mObjects就是构造方法传入的objects,所以getItem()实质上是调用列表的get(int index)方法，position就是index
+    }
 	```
 - **给ListView设置Adapter**
 
