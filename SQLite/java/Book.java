@@ -14,23 +14,7 @@ public class Book {
         this.pages = pages;
         this.price = price;
     }
-
-    public void setAuthor(String author) {
-        this.author = author;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public void setPages(int pages) {
-        this.pages = pages;
-    }
-
-    public void setPrices(double price) {
-        this.price = price;
-    }
-
+    
     public String getAuthor() {
         return author;
     }
