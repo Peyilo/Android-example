@@ -1,4 +1,4 @@
-## **SQLite数据库存储**
+### **SQLite数据库存储**
 
 - **继承SQLiteOpenHelper抽象类**
     
@@ -58,3 +58,50 @@
         | getString(columnIndex: int) | 根据列标获取数据，还提供getInt()等一系列的方法|
         | getColumnIndex(columnName: String) | 根据给定的列名获取列标|
         | close() | 关闭Cursor|
+
+### **ListView**
+
+- **ArrayAdapter\<T>适配器构造方法**
+
+  |Index|Constructor|
+  |-|-|
+  |1|ArrayAdapter(Context context, int resource)|
+  |2|ArrayAdapter(Context context, int resource, int textViewResourceId)|
+  |3|**ArrayAdapter(Context context, int resource, T[] objects)**|
+  |4|ArrayAdapter(Context context, int resource, int textViewResourceId, T[] objects)|
+  |5|**ArrayAdapter(Context context, int resource, List\<T> objects)**|
+  |6|ArrayAdapter(Context context, int resource, int textViewResourceId, List<T> objects)|
+  |7|ArrayAdapter(Context context, int resource, int textViewResourceId, List<T> objects, boolean objsFromResources)|
+
+  注意 : 第七个构造方法是private
+
+- **自定义ArrayAdapter时需要重写getView()**
+	```java
+	public @NonNull View getView(int position, @Nullable View convertView,@NonNull ViewGroup parent)
+	```
+	
+	**示例**
+	```java
+	@Override
+	public View getView(int position, View CovertView, ViewGroup parent){
+		
+		Book book = getItem(position);
+
+		View view = LayoutInflater.from(getContext()).inflate(mResource, parent, false);
+
+		TextView author = (TextView) view.findViewByfId(R.id.author);
+
+		author.setText(book.getAuthor());
+
+		return view;
+		}
+	```
+- **给ListView设置Adapter**
+
+	```java
+	BookAdapter adapter = new BookAdapter(this, R.layout.activity_sub,mBookList);
+
+    ListView listView = (ListView) findViewById(R.id.listView);
+
+    listView.setAdapter(adapter);
+	```
