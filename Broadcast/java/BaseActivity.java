@@ -14,6 +14,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import java.util.ArrayList;
 import java.util.List;
 
+
+//其他活动都继承BaseActivity
 public class BaseActivity extends AppCompatActivity {
 
     MyBroadcastReceiver mReceiver;
@@ -29,7 +31,8 @@ public class BaseActivity extends AppCompatActivity {
         super.onDestroy();
         Collector.remove(this);
     }
-
+    
+    //当活动处于栈顶，就注册广播接收器
     @Override
     public void onResume(){
         super.onResume();
@@ -38,13 +41,15 @@ public class BaseActivity extends AppCompatActivity {
         filter.addAction("com.example.my_action");
         registerReceiver(mReceiver, filter);
     }
-
+    
+    //当活动离开栈顶，就注销广播接收器
     @Override
     public void onPause(){
         super.onPause();
         unregisterReceiver(mReceiver);
     }
-
+    
+    //内部类，自定义广播接收器
     class MyBroadcastReceiver extends BroadcastReceiver {
         @Override
         public void onReceive(Context context, Intent intent){
@@ -63,6 +68,8 @@ public class BaseActivity extends AppCompatActivity {
             builder.show();
         }
     }
+    
+    //内部类，用于一次性结束全部活动
     static class Collector{
 
         static List<Activity> list = new ArrayList<>();
