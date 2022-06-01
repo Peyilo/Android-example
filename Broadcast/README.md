@@ -4,7 +4,8 @@
 
 必须打开应用才可以接收广播
 
-- 继承**BroadcastReceiver**类并重写`public abstract void onReceive(Context context, Intent intent)`
+- 继承**BroadcastReceiver**类并重写
+`public abstract void onReceive(Context context, Intent intent)`
 ```java
 class MyBroadcastReceiver extends BroadcastReceiver {
     @Override
@@ -32,7 +33,8 @@ unregisterReceiver(receiver)
 
 可以实现开机自启
 
-- 继承**BroadcastReceiver**类并重写`public abstract void onReceive(Context context, Intent intent)`
+- 继承**BroadcastReceiver**类并重写
+`public abstract void onReceive(Context context, Intent intent)`
 ```java
 class MyBroadcastReceiver extends BroadcastReceiver{
     @Override
@@ -79,6 +81,7 @@ sendBroadcast(intent);
     ```
 
     - 截断
+    
     `abortBroadcast()`
 
 #### 本地广播
