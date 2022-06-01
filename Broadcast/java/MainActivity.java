@@ -18,6 +18,8 @@ public class MainActivity extends BaseActivity {
         send.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                
+                //发送广播
                 Intent intent = new Intent("com.example.my_action");
                 sendBroadcast(intent);
             }
