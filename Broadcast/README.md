@@ -78,12 +78,16 @@ sendBroadcast(intent);
     ```
 
     - 优先级设置
-    ```xml
-    <intent-filter android:priority="100">
-    ...
-    </intent-filter>
-    ```
-
+        - 静态广播
+        ```xml
+        <intent-filter android:priority="100">
+        ...
+        </intent-filter>
+        ```
+    
+        - 静态广播
+        调用IntentFilter对象的`setPriority(int newPriority)`设置优先级
+        
     - 截断
     
     `abortBroadcast()`
