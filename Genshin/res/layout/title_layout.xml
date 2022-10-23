@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="46dp"
+    android:orientation="horizontal"
+    android:background="@color/my_dark">
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/avatar"
+        android:layout_width="36dp"
+        android:layout_height="match_parent"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginVertical="5dp"
+        android:src="@mipmap/pic_9" />
+
+    <TextView
+        android:id="@+id/title_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toEndOf="@id/avatar"
+        android:layout_marginTop="5dp"
+        android:text="小夏诺不躲纸箱"
+        android:textColor="@color/white"
+        android:textSize="14sp"/>
+
+    <ImageView
+        android:id="@+id/title_status_img"
+        android:layout_width="8dp"
+        android:layout_height="wrap_content"
+        android:layout_toEndOf="@id/avatar"
+        android:layout_alignTop="@id/title_status_text"
+        android:layout_marginBottom="5dp"
+        android:layout_marginEnd="4dp"
+        android:src="@drawable/dot" />
+
+    <TextView
+        android:id="@+id/title_status_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@id/avatar"
+        android:layout_toEndOf="@id/title_status_img"
+        android:text="手机在线 - 5G"
+        android:textColor="@color/white"
+        android:textSize="9sp" />
+
+    <ImageButton
+        android:id="@+id/title_add"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_centerVertical="true"
+        android:layout_marginHorizontal="15dp"
+        android:src="@drawable/ic_baseline_add_24"
+        android:background="@color/my_dark" />
+
+</RelativeLayout>

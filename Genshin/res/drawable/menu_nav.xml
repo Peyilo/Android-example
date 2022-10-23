@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+
+        <item
+            android:title="360"
+            android:icon="@drawable/ic_baseline_360_24" />
+
+        <item
+            android:title="4k"
+            android:icon="@drawable/ic_baseline_4k_24" />
+
+        <item
+            android:title="Android"
+            android:icon="@drawable/ic_baseline_android_24" />
+
+    </group>
+</menu>

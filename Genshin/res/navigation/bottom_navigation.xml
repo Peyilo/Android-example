@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/bottom_navigation"
+    xmlns:tools="http://schemas.android.com/tools"
+    app:startDestination="@+id/gacha100">
+
+    <fragment
+        android:id="@+id/gacha100"
+        android:name="com.example.genshin.fragment.FragmentOne"
+        tools:layout="@layout/fragment_one" />
+
+    <fragment
+        android:id="@+id/gacha301"
+        android:name="com.example.genshin.fragment.FragmentTwo"
+        tools:layout="@layout/fragment_two" />
+
+    <fragment
+        android:id="@+id/gacha302"
+        android:name="com.example.genshin.fragment.FragmentThree"
+        tools:layout="@layout/fragment_three" />
+
+    <fragment
+        android:id="@+id/gacha200"
+        android:name="com.example.genshin.fragment.FragmentFour"
+        tools:layout="@layout/fragment_four" />
+</navigation>
